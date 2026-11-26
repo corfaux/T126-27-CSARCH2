@@ -1,0 +1,29 @@
+# Machine 7 test A (sequential)
+# n=4 blocks, 4-way (1 sets), block size=16 words, memory=1024 blocks, replacement=LRU, read=LOAD_THROUGH
+# Tc=1.0ns  Tm=10.0ns/word  hit=1.0ns  miss=11.0ns
+Step | Block | Set |  Tag | Way | Result | Evicted | Time(ns)
+--------------------------------------------------------------
+   1 |     0 |   0 |    0 |   0 | MISS |       - |     11.0
+   2 |     1 |   0 |    1 |   1 | MISS |       - |     11.0
+   3 |     2 |   0 |    2 |   2 | MISS |       - |     11.0
+   4 |     3 |   0 |    3 |   3 | MISS |       - |     11.0
+   5 |     4 |   0 |    4 |   0 | MISS |       0 |     11.0
+   6 |     5 |   0 |    5 |   1 | MISS |       1 |     11.0
+   7 |     6 |   0 |    6 |   2 | MISS |       2 |     11.0
+   8 |     7 |   0 |    7 |   3 | MISS |       3 |     11.0
+   9 |     0 |   0 |    0 |   0 | MISS |       4 |     11.0
+  10 |     1 |   0 |    1 |   1 | MISS |       5 |     11.0
+  11 |     2 |   0 |    2 |   2 | MISS |       6 |     11.0
+  12 |     3 |   0 |    3 |   3 | MISS |       7 |     11.0
+  13 |     4 |   0 |    4 |   0 | MISS |       0 |     11.0
+  14 |     5 |   0 |    5 |   1 | MISS |       1 |     11.0
+  15 |     6 |   0 |    6 |   2 | MISS |       2 |     11.0
+  16 |     7 |   0 |    7 |   3 | MISS |       3 |     11.0
+
+Total memory accesses : 16
+Cache hits            : 0
+Cache misses          : 16
+Hit rate              : 0.00%
+Miss rate             : 100.00%
+Average access time   : 11.00 ns
+Total access time     : 176.0 ns
