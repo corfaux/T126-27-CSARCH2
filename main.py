@@ -13,7 +13,7 @@ from stats_analysis import (
     verify_against_engine,
 )
 
-# HARDCODED STUFF.
+# Hardcoded Values and Labels
 WAYS = 4
 MEMORY_BLOCKS = 1024
 STAT_LABELS = [
@@ -30,19 +30,19 @@ READ_LABELS = {
     "Load-through": ReadPolicy.LOAD_THROUGH,
 }
 
-# validation helpers
-# Size Check: Power of 2 ka ba?
+# Validation Helpers
+# Size Check: Is n a power of 2?
 def _pow2(n: int) -> bool:
     return n > 0 and n & (n - 1) == 0
 
-# Int checker: whole number lang ba?
+# Int checker: Ensure that text is a whole number.
 def _int(text: str, label: str) -> int:
     text = str(text).strip()
     if not text.lstrip("-").isdigit():
         raise ValueError(f"{label} must be a whole number.")
     return int(text)
 
-# Float checker: whole number or decimal number lang ba? <- for time values
+# Float checker: Ensure that text is a valid FP for time computations.
 def _float(text: str, label: str) -> float:
     try:
         value = float(str(text).strip())
